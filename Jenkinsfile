@@ -23,11 +23,11 @@ pipeline {
         stage('Auto Test') {
             agent none
             steps {
-                sh 'pynguin --project-path .\sources --output-path .\pynguin-output --module-name calc'
+                sh 'pynguin --project-path sources --output-path pynguin-output --module-name calc'
             }
             post {
                 always {
-                    junit 'test-reports/results.xml'
+                    junit 'auto test-reports/results.xml'
                 }
             }
         }

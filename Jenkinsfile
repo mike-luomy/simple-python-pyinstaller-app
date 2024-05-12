@@ -25,11 +25,6 @@ pipeline {
             steps {
                 sh 'pynguin --project-path sources --output-path pynguin-output --module-name calc'
             }
-            post {
-                always {
-                    junit 'auto test-reports/results.xml'
-                }
-            }
         }
         stage('Deliver') {
             steps {

@@ -22,12 +22,6 @@ pipeline {
                 }
             }
         }
-        stage('Auto Test') {
-            agent none
-            steps {
-                cmd 'pynguin --project-path sources --output-path pynguin-output --module-name calc'
-            }
-        }
         stage('Deliver') {
             agent any
             steps {

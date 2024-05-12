@@ -25,7 +25,7 @@ pipeline {
         stage('Auto Test') {
             agent none
             steps {
-                sh 'pynguin --project-path sources --output-path pynguin-output --module-name calc'
+                cmd 'pynguin --project-path sources --output-path pynguin-output --module-name calc'
             }
         }
         stage('Deliver') {

@@ -34,7 +34,7 @@ pipeline {
                     title: 'Test Coverage',
                     yaxis: 'Coverage',
                     style: 'line',
-                    csvSeries: [[file: 'coverage.csv', label: 'Coverage']]
+                    csvSeries: [[file: 'coverage.csv']]
                 ])
             }
         }

@@ -24,7 +24,12 @@ pipeline {
         }
         stage('Coverage Report') {
             steps {
-                plot csv: 'coverage.csv', series: [[file: 'coverage.csv', label: 'Coverage']]
+                plot([
+                    csvFileName: 'coverage.csv',
+                    title: 'Test Coverage',
+                    yaxis: 'Coverage',
+                    series: [[file: 'coverage.csv', label: 'Coverage']]
+                ])
             }
         }
         stage('Deliver') {

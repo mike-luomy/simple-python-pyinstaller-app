@@ -15,14 +15,14 @@ pipeline {
             agent any
             steps {
                 sh 'py.test --junit-xml test-reports/results.xml sources/test_calc.py'
-                sh 'py.test --cov=test_calc.py --cov-report=xml:coverage.xml sources/test_calc.py'
+                sh 'py.test --cov=test_calc.py --cov-report=xml:test-reports/coverage.xml sources/test_calc.py'
                 // Convert coverage XML report to CSV
-                sh 'python sources/convert_coverage_xml_to_csv.py coverage.xml coverage.csv'
+                sh 'python sources/convert_coverage_xml_to_csv.py test-reports/coverage.xml test-reports/coverage.csv'
             }
             post {
                 always {
                     junit 'test-reports/results.xml'
-                    junit 'coverage.csv'
+                    junit 'test-reports/coverage.csv'
                     
                 }
             }

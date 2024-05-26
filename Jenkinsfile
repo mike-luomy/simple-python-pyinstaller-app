@@ -22,6 +22,11 @@ pipeline {
                 }
             }
         }
+        stage('Coverage Report') {
+            steps {
+                plot csv: 'coverage.csv', series: [[file: 'coverage.csv', label: 'Coverage']]
+            }
+        }
         stage('Deliver') {
             agent any
             steps {

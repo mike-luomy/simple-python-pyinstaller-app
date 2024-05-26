@@ -21,9 +21,7 @@ pipeline {
             }
             post {
                 always {
-                    junit 'test-reports/results.xml'
-                    junit 'test-reports/coverage.xml'
-                    
+                    junit 'test-reports/results.xml'            
                 }
             }
         }

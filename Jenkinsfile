@@ -28,7 +28,7 @@ pipeline {
                     csvFileName: 'coverage.csv',
                     title: 'Test Coverage',
                     yaxis: 'Coverage',
-                    series: [[file: 'coverage.csv', label: 'Coverage']]
+                    csvSSeries: [[file: 'coverage.csv', label: 'Coverage']]
                 ])
             }
         }

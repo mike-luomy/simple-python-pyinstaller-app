@@ -25,6 +25,7 @@ pipeline {
         stage('Coverage Report') {
             steps {
                 plot([
+                    group: 'Coverage Reports',
                     csvFileName: 'coverage.csv',
                     title: 'Test Coverage',
                     yaxis: 'Coverage',

@@ -23,7 +23,6 @@ pipeline {
             }
         }
         stage('Coverage Report') {
-            agent none
             steps {
                 plot csv: 'coverage.csv', series: [[file: 'coverage.csv', label: 'Coverage']]
             }

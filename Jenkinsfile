@@ -30,7 +30,7 @@ pipeline {
             steps {
                 plot([
                     group: 'Coverage Reports',
-                    csvFileName: 'coverage.csv',
+                    csvFileName: 'test-reports/coverage.csv',
                     title: 'Test Coverage',
                     yaxis: 'Coverage',
                     style: 'line',

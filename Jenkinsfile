@@ -26,6 +26,7 @@ pipeline {
             }
         }
         stage('Coverage Report') {
+            agent any
             steps {
                 plot([
                     group: 'Coverage Reports',

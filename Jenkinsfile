@@ -29,6 +29,7 @@ pipeline {
                     csvFileName: 'coverage.csv',
                     title: 'Test Coverage',
                     yaxis: 'Coverage',
+                    style: 'line',
                     csvSeries: [[file: 'coverage.csv', label: 'Coverage']]
                 ])
             }
